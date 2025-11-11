@@ -11,6 +11,7 @@ Do days with high discounts (i.e., "promotion days") result in significantly hig
 State your null and alternative hypotheses clearly and succinctly.
 
 Null Hypothesis: The true mean net sales on "Promo Days" is the same as or less than the mean Net sales on "Regular Days."
+
 Alternative Hypothesis: The true mean Net sales on "Promo Days" is greater than the mean Net sales on "Regular Days."
 
 
@@ -18,19 +19,40 @@ Alternative Hypothesis: The true mean Net sales on "Promo Days" is greater than 
 
 Describe your data source(s):
 
-* Where it comes from (URL, API, dataset name)
-* What each observation represents (unit of analysis)
-* Number of observations and key variables
-* Any filtering, cleaning, or transformation steps
+* Where it comes from (URL, API, dataset name) : : This is private data from a single liquor store in Minnesota, provided by the business owner. The data was pulled from the Clover web browser, exporting daily sales totals from March 2024 to October 2025.
+
+* What each observation represents (unit of analysis): Each row in the file represents a single day of sales.
+
+* Number of observations and key variables: There are 610 observations (rows). The key variables for this analysis are Gross sales (float), Discounts (float), and Net sales (float).
+
+* Any filtering, cleaning, or transformation steps: 
+
+The data was in a column format from its raw export into various month files. I had created a new excel file called LiquorStoreDataCleaned.xlsx in which I had transposed the data into row format and calculated discount rate, made a weekday column, remove any commas, and other misc tasks. 
+
+A discount_rate column was made using the formula (Discounts / Gross sales).
+
+A categorical is_promo_day column (True/False) will be engineered based on a discount_rate threshold (e.g., any day with a discount_rate above the 75th percentile).
+
 
 ## 4. Methods
 
 Summarize how you analyzed the data:
 
-* The test statistic for your permutation test
-* How you simulated or resampled under the null hypothesis
-* The metric(s) for which you created bootstrap confidence intervals
-* Why the CLT does not apply to at least one metric
+* The test statistic for your permutation test: 
+
+The test statistic will be the difference in mean Net sales between the two groups ("Promo Days" and "Regular Days").
+
+* How you simulated or resampled under the null hypothesis: 
+
+I will perform a permutation test by combining the Net sales data from both groups, shuffling the combined list, re-dealing them back into two new groups of the original sizes, and calculating the new difference in means. This will be repeated 10,000+ times to build a distribution of test statistics under the null hypothesis.
+
+* The metric(s) for which you created bootstrap confidence intervals:
+
+I will create a 95% bootstrap confidence interval for the median Net sales on "Promo Days."
+
+* Why the CLT does not apply to at least one metric:
+
+(CLT) applies to statistics like sums and means, but it does not apply to the median. Therefore, I cannot use a standard formula to find the confidence interval for the median. Bootstrapping is the correct method to generate this interval.
 
 ## 5. Results
 
