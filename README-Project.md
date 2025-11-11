@@ -4,9 +4,15 @@
 
 What are you investigating, and why does it matter?
 
+Do days with high discounts (i.e., "promotion days") result in significantly higher net sales? This matters because it provides a direct, data-driven answer to whether the store's promotion strategy is effectively increasing revenue or just cutting profit margins for no benefit.
+
 ## 2. Hypothesis
 
 State your null and alternative hypotheses clearly and succinctly.
+
+Null Hypothesis: The true mean net sales on "Promo Days" is the same as or less than the mean Net sales on "Regular Days."
+Alternative Hypothesis: The true mean Net sales on "Promo Days" is greater than the mean Net sales on "Regular Days."
+
 
 ## 3. Data Description
 
