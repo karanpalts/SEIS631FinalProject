@@ -4,15 +4,15 @@
 
 What are you investigating, and why does it matter?
 
-Do days with high discounts (i.e., "promotion days") result in significantly higher net sales? This matters because it provides a direct, data-driven answer to whether the store's promotion strategy is effectively increasing revenue or just cutting profit margins for no benefit.
+Do days with high discounts (promotion days) result in significantly higher net sales? This matters because it provides a direct, data-driven answer to whether the store's promotion strategy is effectively increasing revenue or just cutting profit margins for no benefit.
 
 ## 2. Hypothesis
 
 State your null and alternative hypotheses clearly and succinctly.
 
-Null Hypothesis: The true mean net sales on "Promo Days" is the same as or less than the mean Net sales on "Regular Days."
+Null Hypothesis: The true mean net sales on Promo Days is the same as or less than the mean Net sales on Regular Days.
 
-Alternative Hypothesis: The true mean Net sales on "Promo Days" is greater than the mean Net sales on "Regular Days."
+Alternative Hypothesis: The true mean Net sales on Promo Days is greater than the mean Net sales on Regular Days.
 
 
 ## 3. Data Description
@@ -27,11 +27,11 @@ Describe your data source(s):
 
 * Any filtering, cleaning, or transformation steps: 
 
-The data was in a column format from its raw export into various month files. I had created a new excel file called LiquorStoreDataCleaned.xlsx in which I had transposed the data into row format and calculated discount rate, made a weekday column, remove any commas, and other misc tasks. 
+The data was in a column format from its raw export into various month files. I had created a new excel file called LiquorStoreDataCleaned.xlsx in which I had transposed the data into row format and calculated discount rate, made a weekday column, remove any commas, and then move that file into a csv.
 
 A discount_rate column was made using the formula (Discounts / Gross sales).
 
-A categorical is_promo_day column (True/False) will be engineered based on a discount_rate threshold (e.g., any day with a discount_rate above the 75th percentile).
+A categorical is_promo_day column (True/False) was made based on a discount_rate threshold (any day with a discount_rate above the 75th percentile).
 
 
 ## 4. Methods
@@ -40,7 +40,7 @@ Summarize how you analyzed the data:
 
 * The test statistic for your permutation test: 
 
-The test statistic will be the difference in mean Net sales between the two groups ("Promo Days" and "Regular Days").
+The test statistic will be the difference in mean Net sales between the two groups (Promo Days vs Regular Days).
 
 * How you simulated or resampled under the null hypothesis: 
 
@@ -48,7 +48,7 @@ I will perform a permutation test by combining the Net sales data from both grou
 
 * The metric(s) for which you created bootstrap confidence intervals:
 
-I will create a 95% bootstrap confidence interval for the median Net sales on "Promo Days."
+I will create a 95% bootstrap confidence interval for the median Net sales on Promo Days.
 
 * Why the CLT does not apply to at least one metric:
 
