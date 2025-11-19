@@ -4,7 +4,7 @@
 
 What are you investigating, and why does it matter?
 
-Do days with high discounts (promotion days) result in significantly higher net sales? This matters because it provides a direct, data-driven answer to whether the store's promotion strategy is effectively increasing revenue or just cutting profit margins for no benefit.
+This project shows do days with high discounts (promotion days) result in significantly higher net sales? This matters because it provides a direct, data-driven answer to whether the store's promotion strategy is effectively increasing revenue or just cutting profit margins for no benefit.
 
 ## 2. Hypothesis
 
@@ -19,7 +19,7 @@ Alternative Hypothesis: The true mean Net sales on Promo Days is greater than th
 
 Describe your data source(s):
 
-* Where it comes from (URL, API, dataset name) : : This is private data from a single liquor store in Minnesota, provided by the business owner. The data was pulled from the Clover web browser, exporting daily sales totals from March 2024 to October 2025.
+* Where it comes from (URL, API, dataset name): This is private data from a single liquor store in Minnesota, provided by the business owner. The data was pulled from the Clover web browser, exporting daily sales totals from March 2024 to October 2025.
 
 * What each observation represents (unit of analysis): Each row in the file represents a single day of sales.
 
