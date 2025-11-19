@@ -59,27 +59,66 @@ I will create a 95% bootstrap confidence interval for the median Net sales on Pr
 Present your main findings:
 
 * Key summary statistics and visualizations
+
+The threshold for defining a Promo Day (top 25% discount rate) was 0.0109 (1.09%) (discount of total sales). 
+The sample was split into 457 Regular Days and 153 Promo Days.
+The initial boxplot visually suggested Promo Days had higher sales, but this was later proven to be due to the Day of Week confounding variable.
+Final analysis showed a moderate negative correlation (r = -0.303) between the size of the discount and the daily Net Sales.
+
+
 * Observed test statistic and p-value (if applicable)
+
+Observed Difference (Promo Mean - Regular Mean): (- $838.34)
+P-value (Stratified Permutation Test): (0.8398)
+Conclusion: Since p > 0.05, we fail to reject the Null Hypothesis. The promotions did not cause a statistically significant increase in sales, even after controlling for the Day of Week.
+
+
 * Bootstrap confidence intervals for relevant metrics
+
+•  Original Median Net Sales (Promo Days): ($2,498.13)
+•  95% Confidence Interval for Median: ($2,450.33, $2,551.67)
+
+
 
 ## 6. Uncertainty Estimation
 
 Discuss your resampling results:
 
-* How many resamples you used
-* What the bootstrap or randomization distributions looked like
-* How you interpret the interval estimates
+* How many resamples you used: 
+
+We used 10,000 repetitions for both the Stratified Permutation Test and the Bootstrapping Confidence Interval.
+
+* What the bootstrap or randomization distributions looked like:
+
+The randomization distribution (for the permutation test) was centered near zero, showing that the observed difference of $ - 838.34 fell well within the range of outcomes that would be expected purely by random chance.
+
+The bootstrap distribution (for the median CI) was tightly clustered around the observed median of $2,498.13, indicating low variance and high stability in the estimate.
+
+* How you interpret the interval estimates: 
+
+We are 95% confident that the true median Net Sales on a Promo Day lies between $2,450.33 and $2,551.67. This provides the business with a narrow, reliable range for forecasting sales and managing inventory on any day they run a promotion.
+
+
 
 ## 7. Limitations
 
 Briefly note any limitations in data, assumptions, or methods, including sources of bias or missing data.
 
+Confounding Variables: While I controlled for the Day of Week using a stratified test (as recommended), I did not account for other factors that strongly influence liquor sales, such as holidays, weather events, or seasonality.
+
+Generalizability: The data is from a single store in Blaine, MN. The results cannot be generalized to other stores or regions, as pricing and local competition will differ.
+
+Missing Data: The dataset was missing Cost of Goods Sold (COGS) which were not available. This prevents us from measuring the direct impact on Net Profit.
+
+
+
 ## 8. References
-
-
-
-
 List all datasets, tools, libraries, or papers you cited.
+
+Dataset: Private daily sales data from a single Minnesota liquor store (March 2024 - October 2025) using Clover POS.
+
+Tools & Libraries: Python, Pandas, NumPy, Matplotlib (for visualization), and Jupyter Notebook.
+
 
 ---
 
